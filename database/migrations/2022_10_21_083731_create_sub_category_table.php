@@ -13,10 +13,10 @@ class CreateSubCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('sub_category', function (Blueprint $table) {
+        Schema::create('sub_categories', function (Blueprint $table) {
             $table->integer('subcat_id', true);
             $table->string('subcat_name');
-            $table->integer('main_cat')->index('sub_category_ibfk_1');
+            $table->integer('main_cat')->index('sub_categories_ibfk_1');
         });
     }
 
@@ -27,6 +27,6 @@ class CreateSubCategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sub_category');
+        Schema::dropIfExists('sub_categories');
     }
 }

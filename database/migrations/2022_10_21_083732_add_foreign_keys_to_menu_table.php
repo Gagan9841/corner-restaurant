@@ -13,9 +13,9 @@ class AddForeignKeysToMenuTable extends Migration
      */
     public function up()
     {
-        Schema::table('menu', function (Blueprint $table) {
-            $table->foreign(['item_cat'], 'menu_ibfk_1')->references(['cat_id'])->on('menu_category')->onUpdate('CASCADE')->onDelete('CASCADE');
-            $table->foreign(['item_subcat'], 'menu_ibfk_2')->references(['subcat_id'])->on('sub_category')->onUpdate('CASCADE')->onDelete('CASCADE');
+        Schema::table('menus', function (Blueprint $table) {
+            $table->foreign(['item_cat'], 'menus_ibfk_1')->references(['cat_id'])->on('menu_categories')->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->foreign(['item_subcat'], 'menus_ibfk_2')->references(['subcat_id'])->on('sub_categories')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 
@@ -26,9 +26,9 @@ class AddForeignKeysToMenuTable extends Migration
      */
     public function down()
     {
-        Schema::table('menu', function (Blueprint $table) {
-            $table->dropForeign('menu_ibfk_1');
-            $table->dropForeign('menu_ibfk_2');
+        Schema::table('menus', function (Blueprint $table) {
+            $table->dropForeign('menus_ibfk_1');
+            $table->dropForeign('menus_ibfk_2');
         });
     }
 }

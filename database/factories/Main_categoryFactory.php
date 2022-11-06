@@ -19,14 +19,16 @@ class Main_categoryFactory extends Factory
     {
         $cat_name = fake()->name();
         $cat_order = (int)fake()->numerify('###');
+        // $slug = 'slug' => Str::slug($cat_name);
         $img = str::random(3);
         return [
             //
             'main_cat_name'=>$cat_name,
             'main_cat_order'=>$cat_order,
+            'slug' => Str::slug($cat_name),
             'main_cat_img'=> $img,
             // 'main_cat_order'=>(int) $fake$cat_order,
-            
+
         ];
     }
 }

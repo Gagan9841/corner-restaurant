@@ -8,12 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Menu_category extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'menu_categories';
+    protected $primaryKey = 'main_cat_id';
     protected $fillable = ['cat_id' ,'main_category','cat_order'];
 
     public function mainCategory(){
-        
+
         return $this->belongsTo(Main_category::class,'main_category','main_cat_id');
     }
 

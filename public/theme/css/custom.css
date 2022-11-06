@@ -1,4 +1,4 @@
-/* color code logo 
+/* color code logo
 dfc017 - main logo;
 411530 -border ; */
 
@@ -24,3 +24,16 @@ dfc017 - main logo;
  .addNew{
    float: right;
  }
+ #button {
+   position: fixed;
+   bottom: 1.5rem;
+   right: 1.5rem;
+   border-radius: 50%;
+   width: 6rem;
+    height: 6rem;
+    z-index: 1;
+ }
+.edit-img{
+    width: 7rem;
+    height: 7rem;
+}

@@ -13,10 +13,10 @@ class CreateMenuCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('menu_category', function (Blueprint $table) {
+        Schema::create('menu_categories', function (Blueprint $table) {
             $table->integer('cat_id', true);
             $table->string('cat_name');
-            $table->integer('main_category')->nullable()->index('main_category');
+            $table->integer('main_category')->nullable()->index('main_categories');
             $table->integer('cat_order')->default(100);
         });
     }
@@ -28,6 +28,6 @@ class CreateMenuCategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menu_category');
+        Schema::dropIfExists('menu_categories');
     }
 }

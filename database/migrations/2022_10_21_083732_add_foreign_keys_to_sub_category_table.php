@@ -13,8 +13,8 @@ class AddForeignKeysToSubCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::table('sub_category', function (Blueprint $table) {
-            $table->foreign(['main_cat'], 'sub_category_ibfk_1')->references(['cat_id'])->on('menu_category')->onUpdate('CASCADE')->onDelete('CASCADE');
+        Schema::table('sub_categories', function (Blueprint $table) {
+            $table->foreign(['main_cat'], 'sub_categories_ibfk_1')->references(['cat_id'])->on('menu_category')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 
@@ -25,8 +25,8 @@ class AddForeignKeysToSubCategoryTable extends Migration
      */
     public function down()
     {
-        Schema::table('sub_category', function (Blueprint $table) {
-            $table->dropForeign('sub_category_ibfk_1');
+        Schema::table('sub_categories', function (Blueprint $table) {
+            $table->dropForeign('sub_categories_ibfk_1');
         });
     }
 }
